@@ -1,6 +1,6 @@
 package com.company;
 
-public class hwk2 {
+public class Hwk2 {
 
     public static void main(String[] args) {
         byte task1Num1 = 0x6F;
