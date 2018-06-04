@@ -1,4 +1,4 @@
-package com.company;
+package com.gmail.evanloaf.Hwk02;
 
 public class Hwk2 {
 
