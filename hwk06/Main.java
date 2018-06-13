@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // BigInteger
+        /*// BigInteger
         System.out.println("\nTask0. BigInteger. x*x + y/x.\n");
         BigIntegerService bigInt = new BigIntegerService();
         BigInteger firstNumber = new BigInteger("2"); // Value can be freely changed
@@ -26,7 +26,11 @@ public class Main {
         // Random number within a range
         System.out.println("\nTask3. Getting a random number within a [-n; n] range.\n");
         NumberGeneratorService myNumber = new NumberGeneratorService();
-        myNumber.getRange();
+        myNumber.getRange();*/
+
+        // Test Random Crack
+        TestRandomCrackService crack = new TestRandomCrackService();
+        crack.crackLoop();
 
     }
 
