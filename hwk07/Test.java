@@ -51,6 +51,11 @@ public class Test {
         System.out.println(String.valueOf(arr, 2, 2));
         System.out.println(String.valueOf("omegalul"));
         System.out.println(String.valueOf((float) 5.71));
+        
+        // Init arr w/o cons
+        int n = 10;
+        String[][] myArr = new String[n][];
+        String[] myArrSingle = new String[n];
 
 
     }
