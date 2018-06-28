@@ -1,0 +1,10 @@
+Student{number=1, fio='Mister Student, Name1, Surname1', mathMark=5, englishMark=6, russianMark=0}
+Student{number=2, fio='Mister Student, Name2, Surname2', mathMark=10, englishMark=7, russianMark=0}
+Student{number=3, fio='Mister Student, Name3, Surname3', mathMark=3, englishMark=9, russianMark=9}
+Student{number=4, fio='Mister Student, Name4, Surname4', mathMark=3, englishMark=3, russianMark=8}
+Student{number=5, fio='vasiliy', mathMark=7, englishMark=0, russianMark=5}
+Student{number=6, fio='Mister Student, Name6, Surname6', mathMark=4, englishMark=3, russianMark=7}
+Student{number=7, fio='Mister Student, Name7, Surname7', mathMark=9, englishMark=6, russianMark=2}
+Student{number=8, fio='Mister Student, Name8, Surname8', mathMark=7, englishMark=8, russianMark=5}
+Student{number=9, fio='Mister Student, Name9, Surname9', mathMark=2, englishMark=6, russianMark=3}
+Student{number=10, fio='Mister Student, Name10, Surname10', mathMark=5, englishMark=10, russianMark=0}
