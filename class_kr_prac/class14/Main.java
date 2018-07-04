@@ -1,11 +1,11 @@
 package com.gmail.evanloafakahaitao.class_kr_prac.class14;
 
-import com.gmail.evanloafakahaitao.class14.test_kr_tasks.task1.ApplesProblem;
-import com.gmail.evanloafakahaitao.class14.test_kr_tasks.task2.SymbolSearchInStringProblem;
-import com.gmail.evanloafakahaitao.class14.test_kr_tasks.task3.NumbersCalculationsService;
-import com.gmail.evanloafakahaitao.class14.test_kr_tasks.task4.MonthCollectionProblem;
-import com.gmail.evanloafakahaitao.class14.test_kr_tasks.task5.StringUniqueSymbolsNumberService;
-import com.gmail.evanloafakahaitao.class14.test_kr_tasks.task6.WriteStudentsProblem;
+import com.gmail.evanloafakahaitao.class_kr_prac.class14.test_kr_tasks.task1.ApplesProblem;
+import com.gmail.evanloafakahaitao.class_kr_prac.class14.test_kr_tasks.task2.SymbolSearchInStringProblem;
+import com.gmail.evanloafakahaitao.class_kr_prac.class14.test_kr_tasks.task3.NumbersCalculationsService;
+import com.gmail.evanloafakahaitao.class_kr_prac.class14.test_kr_tasks.task4.MonthCollectionProblem;
+import com.gmail.evanloafakahaitao.class_kr_prac.class14.test_kr_tasks.task5.StringUniqueSymbolsNumberService;
+import com.gmail.evanloafakahaitao.class_kr_prac.class14.test_kr_tasks.task6.WriteStudentsProblem;
 
 import java.io.File;
 
@@ -67,7 +67,7 @@ public class Main {
 
         // Task6
         System.out.println("\nTask6.");
-        String myPath = "src/com/gmail/evanloafakahaitao/class14/test_kr_tasks/task6/my_students.txt";
+        String myPath = "src/com/gmail/evanloafakahaitao/class_kr_prac/class14/test_kr_tasks/task6/my_students.txt";
         File students = new File(myPath);
 
         WriteStudentsProblem writeStudent = new WriteStudentsProblem();
