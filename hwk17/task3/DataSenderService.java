@@ -18,18 +18,32 @@ public class DataSenderService implements Runnable {
     
     @Override
     public void run() {
-        int writingOperationsCount = (int) Math.ceil(linesToWriteTotal / linesPerCycle);
+        int writingOperationsCount = (linesToWriteTotal + linesPerCycle - 1) / linesPerCycle;
         for (int k = 0; k < writingOperationsCount; k++) {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < linesPerCycle; i++) {
-                for (int j = 0; j < numbersPerLine; j++) {
-                    sb.append(ThreadLocalRandom.current().nextInt(101));
-                    if (j != numbersPerLine - 1) {
-                        sb.append(",");
+            if (k != writingOperationsCount - 1) {
+                for (int i = 0; i < linesPerCycle; i++) {
+                    for (int j = 0; j < numbersPerLine; j++) {
+                        sb.append(ThreadLocalRandom.current().nextInt(101));
+                        if (j != numbersPerLine - 1) {
+                            sb.append(",");
+                        }
+                    }
+                    if (i != linesPerCycle - 1) {
+                        sb.append(System.lineSeparator());
                     }
                 }
-                if (i != linesPerCycle - 1) {
-                    sb.append(System.lineSeparator());
+            } else {
+                for (int i = 0; i < linesToWriteTotal % linesPerCycle; i++) {
+                    for (int j = 0; j < numbersPerLine; j++) {
+                        sb.append(ThreadLocalRandom.current().nextInt(101));
+                        if (j != numbersPerLine - 1) {
+                            sb.append(",");
+                        }
+                    }
+                    if (i != linesPerCycle - 1) {
+                        sb.append(System.lineSeparator());
+                    }
                 }
             }
             dataFile.sendData(sb.toString());

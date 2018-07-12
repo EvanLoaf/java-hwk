@@ -23,13 +23,12 @@ public class DataReceiverService implements Runnable {
             String currentData = dataFile.receiveData(linesPerCycle);
             if (currentData == null) {
                 System.out.println("DT is over.");
+                return;
             }
             String[] stringNumbersReceived = currentData.split(",");
             Integer[] currentCycleReceivedNumbers = new Integer[stringNumbersReceived.length];
             for (int i = 0; i < currentCycleReceivedNumbers.length; i++) {
-                for (String s : stringNumbersReceived) {
-                    currentCycleReceivedNumbers[i] = Integer.valueOf(s);
-                }
+                currentCycleReceivedNumbers[i] = Integer.valueOf(stringNumbersReceived[i]);
             }
             dataFile.writeToDeque(currentCycleReceivedNumbers);
         }

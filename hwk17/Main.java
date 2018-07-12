@@ -46,7 +46,7 @@ public class Main {
     
         ExecutorService executor = Executors.newFixedThreadPool(3);
         
-        // Class task1
+        /*// Class task1
         System.out.println("\nClass Task1");
         List<Future<List<String>>> futuresWithFilenames = new ArrayList<>();
         Callable<List<String>> fileWriteCallable = new TextWriterCallableService();
@@ -64,6 +64,11 @@ public class Main {
             } catch (ExecutionException e) {
                 e.printStackTrace();
             }
+        }
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         System.out.println("---------------\n");
 
@@ -125,17 +130,17 @@ public class Main {
             }
         }
         executor.shutdown();
-        System.out.println("---------------\n");
+        System.out.println("---------------\n");*/
     
-        // Homework task1
+        /*// Homework task1
         System.out.println("\nHome Task1");
         RandomFilesWriterService writer = new RandomFilesWriterService();
         Scanner in = new Scanner(System.in);
         System.out.println("How many files do u wanna write?");
         int numOfFiles = in.nextInt();
         List<File> myFiles = writer.writeFiles(numOfFiles);
-        Callable<Integer> callable = new ReadAndWriteResultService(myFiles);
-        Future<Integer> future = executor.submit(callable);
+        Callable<Integer> Callable = new ReadAndWriteResultService(myFiles);
+        Future<Integer> future = executor.submit(Callable);
         try {
             System.out.println(future.get());
         } catch (InterruptedException e) {
@@ -150,7 +155,6 @@ public class Main {
         ExecutorService biggerExecutor = Executors.newFixedThreadPool(4);
         List<Callable<Integer>> callList = new ArrayList<>();
         System.out.println("Number of threads?");
-        Scanner in = new Scanner(System.in);
         int threads = in.nextInt();
         System.out.println("How many numbers per list?");
         int numbersPerList = in.nextInt();
@@ -164,9 +168,9 @@ public class Main {
             e.printStackTrace();
         }
         int sumMax = 0;
-        for (Future<Integer> future : myFuturesList) {
+        for (Future<Integer> currentFuture : myFuturesList) {
             try {
-                sumMax += future.get();
+                sumMax += currentFuture.get();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } catch (ExecutionException e) {
@@ -174,9 +178,25 @@ public class Main {
             }
         }
         System.out.printf("Average max number: %d\n", sumMax / myFuturesList.size());
-        System.out.println("---------------\n");
+        System.out.println("---------------\n");*/
     
         // Homework task3
+        /**
+         * ДЗ обычно довольно простая, поэтому придумываю иногда что-то по делу и без
+         * тут не просто говнокод, а говнокод, который делает то, что я хотел изначально
+         * тут - в объект класса DataFile ходят receiver и sender
+         * они обращаются к методам, которые синхронизированы по создаваемому файлу mydata.txt
+         * и по очереди пишут - читают файл
+         * читатель каждый раз яитает файл с отступом, который записывается при каждом считывании
+         * получая данные, receiver пишет их в Deque в том же DataFile
+         * сначала его сразу в receiver положил, но после закрытия трэда с ним не мог получать данные
+         * Deque читается и пишется также синхронно. читается он отдельными трэдами из пула,
+         * которые получают массивы чисел, полученных из Х взятых подряд строк
+         * много чего накручено, в итоге было много багов и вещей, которые надо както реализовать.
+         * В итоге это оказалось очень полезно - как и поискать что-то, так и на себе ощутить
+         * какие-то "часто допускаемые ошибки" и их поиск в коде по выводу ошибок
+         * пофиксил, пока остальные дз объяснялись. допилил этот текст-пояснение и перезалью на гит
+         */
         System.out.println("\nHome Task3");
         AppControllerService myApp = new AppControllerService();
         myApp.runApp();

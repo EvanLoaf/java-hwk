@@ -32,10 +32,14 @@ public class AppControllerService {
         int numOfResults = (linesToWriteTotal + linesPerCycle - 1) / linesPerCycle;
         for (int i = 0; i < numOfResults; i++) {
             Integer[] myData = ((DataReceiverService) receivedRun).getDequeElement();
+            System.out.println("Data from deque: ");
+            for (Integer integer : myData) {
+                System.out.printf("%d ", integer);
+            }
             if (myData == null) {
-                System.out.println("Data transfer error occurred.");
+                System.out.println("\nData transfer error occurred.");
             } else {
-                System.out.println("Data is being transferred to a task - success");
+                System.out.println("\nData is being transferred to a task - success");
             }
             Future<Integer> future = executor.submit(() -> {
                 int sumOfNumbers = 0;
@@ -69,6 +73,7 @@ public class AppControllerService {
             }
         }
         System.out.printf("Max result: %d\n", maxArraySum);
+        executor.shutdown();
     }
     
 }

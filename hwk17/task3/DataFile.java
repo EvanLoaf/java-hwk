@@ -5,13 +5,13 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class DataFile {
-    
+
     private final Deque<Integer[]> dataQueue = new ArrayDeque<>();
     private final File dataFile = new File("mydata.txt");
     private long charactersProcessed = 0;
     private boolean newData = false;
     private int maxIterationsCount = 5;
-    
+
     public void sendData(String data) {
         synchronized (dataFile) {
             while (newData) {
@@ -29,12 +29,12 @@ public class DataFile {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println("Data has been sent.");
+            System.out.println("\nData has been sent.");
             this.newData = true;
             dataFile.notifyAll();
         }
     }
-    
+
     public String receiveData(int linesPerCycle) {
         StringBuilder received = new StringBuilder();
         synchronized (dataFile) {
@@ -55,11 +55,13 @@ public class DataFile {
                 br.skip(charactersProcessed);
                 for (int i = 0; i < linesPerCycle; i++) {
                     String line = br.readLine();
-                    charactersProcessed += line.length();
-                    System.out.println("line: " + line);
-                    received.append(line);
-                    if (i != linesPerCycle - 1) {
-                        received.append(",");
+                    if (line != null && line != "") {
+                        charactersProcessed += line.length();
+                        System.out.println("line: " + line);
+                        received.append(line);
+                        if (i != linesPerCycle - 1) {
+                            received.append(",");
+                        }
                     }
                 }
             } catch (FileNotFoundException e) {
@@ -75,14 +77,14 @@ public class DataFile {
         }
         return received.toString();
     }
-    
+
     public void writeToDeque(Integer[] array) {
         synchronized (dataQueue) {
             dataQueue.addLast(array);
             dataQueue.notifyAll();
         }
     }
-    
+
     public Integer[] readFromDeque() {
         Integer[] data = null;
         synchronized (dataQueue) {
