@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+    <stock>
+        <stockid>123</stockid>
+        <stockcode>456</stockcode>
+        <stockname>Igrushki</stockname>
+        <stockdailyrecordsset>
+            <stockdailyrecord>
+                <recordid>111</recordid>
+                <stock>
+                    <stockid>123</stockid>
+                    <stockcode>456</stockcode>
+                    <stockname>Igrushki</stockname>
+                    <stockdailyrecordsset></stockdailyrecordsset>
+                    <category>
+                        <categoryid>999</categoryid>
+                        <name>Kategoriya</name>
+                        <desc>Random text here</desc>
+                    </category>
+                </stock>
+                <priceopen>100.0</priceopen>
+                <priceclose>300.0</priceclose>
+                <pricechange>200.0</pricechange>
+                <volume>0L</volume>
+                <date>2018-07-16</date>
+            </stockdailyrecord>
+        </stockdailyrecordsset>
+        <category>
+            <categoryid>999</categoryid>
+            <name>Kategoriya</name>
+            <desc>Random text here</desc>
+            <stocksset></stocksset>
+        </category>
+    </stock>
+    <category>
+        <categoryid>999</categoryid>
+        <name>Kategoriya</name>
+        <disc>Random text here</disc>
+        <stocksset>
+            <stock>
+                <stockid>123</stockid>
+                <stockcode>456</stockcode>
+                <stockname>Igrushki</stockname>
+                <stockdailyrecordsset></stockdailyrecordsset>
+                <category>
+                    <categoryid>999</categoryid>
+                    <name>Kategoriya</name>
+                    <desc>Random text here</desc>
+                    <stocksset></stocksset>
+                </category>
+            </stock>
+        </stocksset>
+    </category>
+    <stockdailyrecord>
+        <recordid>111</recordid>
+        <stock>
+            <stockid>123</stockid>
+            <stockcode>456</stockcode>
+            <stockname>Igrushki</stockname>
+            <stockdailyrecordsset></stockdailyrecordsset>
+            <category>
+                <categoryid>999</categoryid>
+                <name>Kategoriya</name>
+                <desc>Random text here</desc>
+                <stocksset></stocksset>
+            </category>
+        </stock>
+        <priceopen>100.0</priceopen>
+        <priceclose>300.0</priceclose>
+        <pricechange>200.0</pricechange>
+        <volume>0L</volume>
+        <date>2018-07-16</date>
+    </stockdailyrecord>
+</class>

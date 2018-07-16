@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:element name="class" type="classType">
+    </xs:element>
+
+    <xs:complexType name="classType">
+        <xs:sequence>
+            <xs:element name="stock" type="stockType"></xs:element>
+            <xs:element name="category" type="categoryType"></xs:element>
+            <xs:element name="stockdailyrecord" type="stockdailyrecordType"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="stockType">
+        <xs:sequence>
+            <xs:group ref="stockGroup"></xs:group>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="categoryType">
+        <xs:sequence>
+            <xs:group ref="categoryGroup"></xs:group>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="stockdailyrecordType">
+        <xs:sequence>
+            <xs:group ref="stockdailyrecordGroup"></xs:group>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="stockdailyrecordssetType">
+        <xs:sequence>
+            <xs:element name="stockdailyrecord" type="stockdailyrecordType" maxOccurs="20" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:group name="stockGroup">
+        <xs:sequence>
+            <xs:element name="stockid" type="xs:integer"/>
+            <xs:element name="stockcode" type="xs:string"/>
+            <xs:element name="stockname" type="xs:string"/>
+            <xs:element name="stockdailyrecordsset" type="stockdailyrecordssetType"/>
+            <xs:element name="category" type="categoryType"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="categoryGroup">
+        <xs:sequence>
+            <xs:element name="categoryid" type="xs:integer"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="desc" type="xs:string"/>
+            <xs:element name="stocksset" type="stockType" maxOccurs="10" minOccurs="0"/>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:group name="stockdailyrecordGroup">
+        <xs:sequence>
+            <xs:element name="recordid" type="xs:integer"/>
+            <xs:element name="stock" type="stockType"/>
+            <xs:element name="priceopen" type="xs:float"/>
+            <xs:element name="priceclose" type="xs:float"/>
+            <xs:element name="pricechange" type="xs:float"/>
+            <xs:element name="volume" type="xs:long"/>
+            <xs:element name="date" type="xs:date"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>
