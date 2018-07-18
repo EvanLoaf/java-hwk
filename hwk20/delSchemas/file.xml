@@ -21,7 +21,7 @@
                 <priceopen>100.0</priceopen>
                 <priceclose>300.0</priceclose>
                 <pricechange>200.0</pricechange>
-                <volume>0L</volume>
+                <volume>0</volume>
                 <date>2018-07-16</date>
             </stockdailyrecord>
         </stockdailyrecordsset>
@@ -29,9 +29,7 @@
             <categoryid>999</categoryid>
             <name>Kategoriya</name>
             <desc>Random text here</desc>
-            <stocksset>
-
-            </stocksset>
+            <stocksset></stocksset>
         </category>
     </stock>
     <category>
