@@ -19,7 +19,7 @@ public class Main {
         //Validation of my schema
         System.out.println("Validation.");
         XMLValidator XMLValidator = new XMLValidator();
-        boolean valid = XMLValidator.validate("books.xml","schema.xsd");
+        boolean valid = XMLValidator.validate("books.xml", "schema.xsd");
         System.out.printf("%s validation = %b.\n", "books.xml", valid);
         System.out.println("----------");
         

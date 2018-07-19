@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.*;
 import java.util.Date;
 
 @XmlRootElement(name = "book", namespace = "https://gmail.com/evanloafakahaitao")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class Book {
     
     private String id;
@@ -19,7 +19,7 @@ public class Book {
         return id;
     }
     
-    //@XmlAttribute(name = "id")
+    @XmlAttribute(name = "id")
     public void setId(String id) {
         this.id = id;
     }
@@ -28,7 +28,7 @@ public class Book {
         return author;
     }
     
-    //@XmlElement(name = "author")
+    @XmlElement(name = "author")
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -37,7 +37,7 @@ public class Book {
         return title;
     }
     
-    //@XmlElement(name = "title")
+    @XmlElement(name = "title")
     public void setTitle(String title) {
         this.title = title;
     }
@@ -46,7 +46,7 @@ public class Book {
         return genre;
     }
     
-    //@XmlElement(name = "genre")
+    @XmlElement(name = "genre")
     public void setGenre(String genre) {
         this.genre = genre;
     }
@@ -55,7 +55,7 @@ public class Book {
         return price;
     }
     
-    //@XmlElement(name = "price")
+    @XmlElement(name = "price")
     public void setPrice(float price) {
         this.price = price;
     }
@@ -64,16 +64,18 @@ public class Book {
         return date;
     }
     
-    //@XmlElement(name = "date")
+    @XmlElement(name = "date")
     public void setDate(Date date) {
         this.date = date;
     }
     
     public String getDescription() {
-        return description;
+        return description
+                .replaceAll("\r\n?|\n", " ")
+                .replaceAll("  *", " ");
     }
     
-    //@XmlElement(name = "description")
+    @XmlElement(name = "description")
     public void setDescription(String description) {
         this.description = description;
     }
@@ -86,7 +88,9 @@ public class Book {
                 ", genre='" + genre + '\'' +
                 ", price=" + price +
                 ", date=" + date +
-                ", description='" + description + '\'' +
-                '}';
+                ", \ndescription='" + description
+                .replaceAll("\r\n?|\n", " ")
+                .replaceAll("  *", " ") + '\'' +
+                '}' + "\nid : " + id;
     }
 }

@@ -16,7 +16,8 @@
         <publish_date>2000-12-16</publish_date>
         <description>A former architect battles corporate zombies,
             an evil sorceress, and her own childhood to become queen
-            of the world.</description>
+            of the world.
+        </description>
     </book>
     <book id="bk103">
         <author>Corets, Eva</author>
@@ -26,6 +27,7 @@
         <publish_date>2000-11-17</publish_date>
         <description>After the collapse of a nanotechnology
             society in England, the young survivors lay the
-            foundation for a new society.</description>
+            foundation for a new society.
+        </description>
     </book>
 </catalog>
