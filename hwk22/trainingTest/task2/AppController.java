@@ -66,5 +66,6 @@ public class AppController {
             e.printStackTrace();
         }
         System.out.printf("Avg max number is: %d\n", sumOfMaxNumbers / countOfMaxNumbers);
+        executor.shutdown();
     }
 }

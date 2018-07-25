@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://gmail.com/evanloafakahaitao"
+           xmlns="https://gmail.com/evanloafakahaitao"
+           elementFormDefault="qualified">
+    <xs:element name="shiporder" type="root"></xs:element>
+    <xs:complexType name="root">
+        <xs:sequence>
+            <xs:element name="orderperson" type="xs:string"></xs:element>
+            <xs:element name="shipto" type="shiptoType"></xs:element>
+            <xs:element name="item" type="itemType" maxOccurs="unbounded"></xs:element>
+        </xs:sequence>
+        <xs:attribute name="orderid" type="xs:positiveInteger"></xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="shiptoType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"></xs:element>
+            <xs:element name="address" type="xs:string"></xs:element>
+            <xs:element name="city" type="xs:string"></xs:element>
+            <xs:element name="country" type="xs:string"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="itemType">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"></xs:element>
+            <xs:element name="note" type="xs:string"></xs:element>
+            <xs:element name="quantity" type="xs:string"></xs:element>
+            <xs:element name="price" type="xs:float"></xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
