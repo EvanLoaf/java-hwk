@@ -7,8 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class PopulateFlatsSingletonService {
-
-    private PopulateFlatsSingletonService() {}
+    
+    private PopulateFlatsSingletonService() {
+    }
     
     private static class Holder {
         

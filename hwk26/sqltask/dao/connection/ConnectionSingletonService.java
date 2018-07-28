@@ -5,20 +5,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionSingletonService {
-
+    
     private Connection connection = null;
-
-     {
+    
+    {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/city"
-                        + "?verifyServerCertificate=false&useSSL=true&serverTimezone=UTC", "root", "root");
+                    + "?verifyServerCertificate=false&useSSL=true&serverTimezone=UTC", "root", "root");
             System.out.println("Connection established");
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println("Couldnt establish connection");
         }
     }
-
+    
     private static volatile ConnectionSingletonService instance = null;
     
     private ConnectionSingletonService() {
@@ -43,7 +43,7 @@ public class ConnectionSingletonService {
     public Connection getConnection() {
         return connection;
     }
-
+    
     public void closeConnection() {
         try {
             connection.close();

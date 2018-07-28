@@ -7,8 +7,6 @@ import com.gmail.evanloafakahaitao.hwk26.sqltask.dao.impl.HouseDaoImpl;
 import com.gmail.evanloafakahaitao.hwk26.sqltask.dao.model.Flat;
 import com.gmail.evanloafakahaitao.hwk26.sqltask.dao.model.House;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class GeneratorSingletonService {
@@ -18,7 +16,8 @@ public class GeneratorSingletonService {
     private static final FlatDao flatDao = new FlatDaoImpl();
     private static final HouseDao houseDao = new HouseDaoImpl();
     
-    private GeneratorSingletonService() {}
+    private GeneratorSingletonService() {
+    }
     
     public synchronized static GeneratorSingletonService getInstance() {
         if (instance == null) {
@@ -32,8 +31,6 @@ public class GeneratorSingletonService {
     }
     
     public void generateAddHousesAndFlats(int housesToGenerate, int flatsPerHouse) {
-        List<House> listOfHouses = new ArrayList<>();
-        List<Flat> listOfFlats = new ArrayList<>();
         for (int i = 0; i < housesToGenerate; i++) {
             House house = new House(
                     "house_address" + rd.nextInt(1000)

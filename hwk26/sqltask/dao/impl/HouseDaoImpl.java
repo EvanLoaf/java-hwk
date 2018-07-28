@@ -30,7 +30,7 @@ public class HouseDaoImpl implements HouseDao {
         }
         return null;
     }
-
+    
     @Override
     public List<House> getHouses() {
         List<House> listOfHouses = new ArrayList<>();
